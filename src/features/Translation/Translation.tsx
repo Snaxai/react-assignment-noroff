@@ -33,11 +33,7 @@ const Translation = () => {
 
     const [error, response] = await addTranslationToUser(user.id, translationHistory)
     if (error !== null) setErrorMessage(error)
-    if (response !== null) {
-      const [userError, userResponse] = await loginUser(user.username)
-      if (userError !== null) setErrorMessage(userError)
-      if (userResponse !== null) setUser(userResponse)
-    }
+    if (response !== null) setUser(response)
     setIsLoading(false)
   }
 
