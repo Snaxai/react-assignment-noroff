@@ -1,17 +1,21 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
+import { useUser } from "../contextStore/UserContext"
 import Navbar from "../features/Navbar/Navbar"
+import ProfileView from "../views/ProfileView"
 import StartView from "../views/StartView"
-import Translation from "../views/TranslationView"
+import TranslationView from "../views/TranslationView"
 import "./App.css"
 
 function App() {
+  const { user } = useUser()
   return (
     <BrowserRouter>
       <div className="App">
-        <Navbar />
+        {user && <Navbar />}
         <Routes>
           <Route path="/" element={<StartView />} />
-          <Route path="/translation" element={<Translation />} />
+          <Route path="/translation" element={<TranslationView />} />
+          <Route path="/profile" element={<ProfileView />} />
         </Routes>
       </div>
     </BrowserRouter>

@@ -1,5 +1,6 @@
 import React from "react"
 import Translation from "../features/Translation/Translation"
+import withAuth from "../hoc/withAuth"
 
 const TranslationView = () => {
   return (
@@ -9,4 +10,4 @@ const TranslationView = () => {
   )
 }
 
-export default TranslationView
+export default withAuth(TranslationView)
