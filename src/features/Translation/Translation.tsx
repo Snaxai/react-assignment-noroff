@@ -12,7 +12,7 @@ const Translation = () => {
   const [errorMessage, setErrorMessage] = useState("")
 
   const handleUserInputChange = (event) => {
-    setUserInput(event.target.value.trim())
+    setUserInput(event.target.value.trim().toLowerCase())
   }
 
   const signImages = (input: string) => {
