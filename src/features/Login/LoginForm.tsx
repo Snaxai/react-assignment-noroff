@@ -54,24 +54,30 @@ const LoginForm = () => {
   })()
 
   return (
-    <>
-      <h2>Login</h2>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <fieldset>
-          <label htmlFor="username"></label>
-          <input
-            type="text"
-            placeholder="johndoe"
-            {...register("username", usernameConfig)}
-          />
-          <br />
-          {errorMessage}
-        </fieldset>
-        <button disabled={isLoading}>Continue</button>
-        {isLoading && <p>Logging in ...</p>}
-        {apiError && <p>{apiError}</p>}
-      </form>
-    </>
+    <div className="container w-25 shadow-lg p-2 rounded">
+      <h2 className="header">Login</h2>
+
+      <div className="container">
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <fieldset>
+            <label htmlFor="username"></label>
+            <input
+              className="mb-2"
+              type="text"
+              placeholder="johndoe"
+              {...register("username", usernameConfig)}
+            />
+            <br />
+            <p className="rounded bg-danger">{errorMessage}</p>
+          </fieldset>
+          <button className="btn btn-primary" disabled={isLoading}>
+            Continue
+          </button>
+          {isLoading && <p>Logging in ...</p>}
+          {apiError && <p>{apiError}</p>}
+        </form>
+      </div>
+    </div>
   )
 }
 
