@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import { clearTranslationHistory } from "../../api/user"
 import { STORAGE_KEY_USER } from "../../const/storageKeys"
 import { useUser } from "../../contextStore/UserContext"
-import { storageDelete } from "../../utils/storage"
+import { storageDelete, storageSave } from "../../utils/storage"
 
 const ProfileActions = () => {
   const { user, setUser } = useUser()
@@ -20,6 +20,7 @@ const ProfileActions = () => {
     const [error, response] = await clearTranslationHistory(user.id)
     if (error !== null) setErrorMessage(error)
     if (response !== null) {
+      storageSave(STORAGE_KEY_USER, response)
       setUser(response)
     }
     setIsLoading(false)

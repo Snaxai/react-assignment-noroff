@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react"
 import { addTranslationToUser, loginUser } from "../../api/user"
+import { STORAGE_KEY_USER } from "../../const/storageKeys"
 import { useUser } from "../../contextStore/UserContext"
+import { storageSave } from "../../utils/storage"
 import TranslationSigns from "./TranslationSigns"
 
 const Translation = () => {
@@ -36,7 +38,10 @@ const Translation = () => {
       translationHistory
     )
     if (error !== null) setErrorMessage(error)
-    if (response !== null) setUser(response)
+    if (response !== null) {
+      storageSave(STORAGE_KEY_USER, response)
+      setUser(response)
+    }
     setIsLoading(false)
   }
 

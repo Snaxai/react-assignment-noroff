@@ -54,7 +54,7 @@ const LoginForm = () => {
   })()
 
   return (
-    <div className="container w-25 shadow-lg p-2 rounded">
+    <div className="container w-auto shadow-lg p-2 rounded">
       <h2 className="header">Login</h2>
 
       <div className="container">
