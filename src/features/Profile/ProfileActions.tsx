@@ -27,9 +27,20 @@ const ProfileActions = () => {
 
   return (
     <>
-      <button disabled={user.translations.length > 0 ? false : true} onClick={clearHistoryClick}>Clear history</button>
-      <button onClick={logout}>Logout</button>
-      {errorMessage && <p>{errorMessage}</p>}
+      <div className="">
+        <button
+          className="btn btn-warning me-2"
+          style={{}}
+          disabled={user.translations.length > 0 ? false : true}
+          onClick={clearHistoryClick}
+        >
+          Clear history
+        </button>
+        <button className="btn btn-danger" onClick={logout}>
+          Logout
+        </button>
+      </div>
+      {errorMessage && <p className="bg-danger">{errorMessage}</p>}
     </>
   )
 }
