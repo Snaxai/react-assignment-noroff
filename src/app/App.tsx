@@ -10,13 +10,15 @@ function App() {
   const { user } = useUser()
   return (
     <BrowserRouter>
-      <div className="container text-center mt-2">
+      <div>
         {user && <Navbar />}
-        <Routes>
-          <Route path="/" element={<StartView />} />
-          <Route path="/translation" element={<TranslationView />} />
-          <Route path="/profile" element={<ProfileView />} />
-        </Routes>
+        <div className="container text-center mt-2">
+          <Routes>
+            <Route path="/" element={<StartView />} />
+            <Route path="/translation" element={<TranslationView />} />
+            <Route path="/profile" element={<ProfileView />} />
+          </Routes>
+        </div>
       </div>
     </BrowserRouter>
   )

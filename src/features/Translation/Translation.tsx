@@ -31,7 +31,10 @@ const Translation = () => {
     const translationHistory = [...user.translations]
     translationHistory.push(userInput)
 
-    const [error, response] = await addTranslationToUser(user.id, translationHistory)
+    const [error, response] = await addTranslationToUser(
+      user.id,
+      translationHistory
+    )
     if (error !== null) setErrorMessage(error)
     if (response !== null) setUser(response)
     setIsLoading(false)
@@ -40,17 +43,24 @@ const Translation = () => {
   return (
     <>
       <div>Translation page</div>
-      <label htmlFor="translationText"></label>
+      <label htmlFor="translationText" aria-label="Translation input"></label>
       <input
         onChange={handleUserInputChange}
         placeholder=""
         type="text"
         id="translationText"
       />
-      <button disabled={isLoading} onClick={handleTranslateClick}>Translate</button>
+      <button
+        className="btn btn-info ms-1"
+        disabled={isLoading}
+        onClick={handleTranslateClick}
+      >
+        Translate
+      </button>
       <section>
         <TranslationSigns signs={signs} />
         {isLoading && <p>Loading ...</p>}
+        {errorMessage && <p>{errorMessage}</p>}
       </section>
     </>
   )
