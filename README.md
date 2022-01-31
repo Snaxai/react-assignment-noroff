@@ -7,8 +7,10 @@ A react project for the react assignment at Noroff in the fullstack Java course 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 # Heroku
+
 ```bash
-https://react-assignment-deploy.herokuapp.com/```
+https://react-assignment-deploy.herokuapp.com/
+```
 
 ## Usage
 
