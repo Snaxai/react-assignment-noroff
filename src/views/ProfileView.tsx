@@ -9,11 +9,11 @@ const ProfileView = () => {
   const { user } = useUser()
 
   return (
-    <>
+    <div>
       <ProfileHeader username={user.username} />
       <ProfileActions />
       <ProfileTranslations translations={user.translations} />
-    </>
+    </div>
   )
 }
 

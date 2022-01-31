@@ -10,7 +10,7 @@ function App() {
   const { user } = useUser()
   return (
     <BrowserRouter>
-      <div className="App">
+      <div className="container text-center mt-2">
         {user && <Navbar />}
         <Routes>
           <Route path="/" element={<StartView />} />

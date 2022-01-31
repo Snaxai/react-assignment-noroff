@@ -4,9 +4,9 @@ import withAuth from "../hoc/withAuth"
 
 const TranslationView = () => {
   return (
-    <>
+    <div>
       <Translation />
-    </>
+    </div>
   )
 }
 
