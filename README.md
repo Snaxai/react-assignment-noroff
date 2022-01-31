@@ -8,6 +8,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 # Heroku
 
+
+
 ```bash
 https://react-assignment-deploy.herokuapp.com/
 ```
@@ -20,10 +22,10 @@ Running locally requires installation of dependencies.
 npm install
 ```
 
-The project uses Vite and should be run using the run script:
+The project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and can be run with command:
 
 ```bash
-npm run dev
+npm start
 ```
 
 ## Author
