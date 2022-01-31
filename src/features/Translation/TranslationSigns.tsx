@@ -4,11 +4,12 @@ import TranslationSignImg from "./TranslationSignImg"
 const TranslationSigns = ({ signs }) => {
   return (
     <>
-      <h4>Output</h4>
-      {signs &&
-        signs.map((sign, index) => (
-          <TranslationSignImg sign={sign} key={`${index}-${sign}`} />
-        ))}
+      <div className="container shadow mt-3 rounded">
+        {signs &&
+          signs.map((sign, index) => (
+            <TranslationSignImg sign={sign} key={`${index}-${sign}`} />
+          ))}
+      </div>
     </>
   )
 }
